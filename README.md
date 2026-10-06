@@ -18,13 +18,13 @@ Skills that let [Claude](https://claude.com/claude-code) edit travel vlogs in
 **With the skills CLI** (needs Node.js):
 
 ```bash
-npx skills add wayfare-studio/skills --skill vlog -g -a claude-code
+npx skills add vidzadnikar/wayfare-skills --skill vlog -g -a claude-code
 ```
 
 **As a Claude Code plugin** (no Node.js needed), inside Claude Code:
 
 ```
-/plugin marketplace add wayfare-studio/skills
+/plugin marketplace add vidzadnikar/wayfare-skills
 /plugin install wayfare@wayfare
 ```
 
