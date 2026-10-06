@@ -1,0 +1,14 @@
+{
+  "name": "wayfare",
+  "description": "Claude skills for Wayfare Studio, the travel vlog editor for Mac",
+  "owner": {
+    "name": "Wayfare Studio"
+  },
+  "plugins": [
+    {
+      "name": "wayfare",
+      "source": "./",
+      "description": "Edit travel vlogs in Wayfare Studio with Claude: story, music, captions, trailer, mix and a full quality review."
+    }
+  ]
+}

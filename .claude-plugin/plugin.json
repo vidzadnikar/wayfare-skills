@@ -1,0 +1,10 @@
+{
+  "name": "wayfare",
+  "version": "0.1.0",
+  "description": "Edit travel vlogs in Wayfare Studio with Claude: story, music, captions, trailer, mix and a full quality review.",
+  "author": {
+    "name": "Wayfare Studio"
+  },
+  "license": "MIT",
+  "keywords": ["video", "vlog", "travel", "editing", "wayfare"]
+}
