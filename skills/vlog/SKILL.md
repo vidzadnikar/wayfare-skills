@@ -33,7 +33,7 @@ Commands are Slovenian (the tool was built in Slovenia):
 | command | what it does |
 |---|---|
 | `scan <p>` | catalog clips: times, GPS, thumbnails, flags |
-| `povzetek <p> [--zvoki] [--edit\|--posnetki]` | clips with speech and the whole edit in a few lines |
+| `povzetek <p> [--zvoki] [--slika] [--edit\|--posnetki]` | clips with speech, the whole edit; `--slika` all clips on one image |
 | `zvoki <clip> --strni Speech Music` | what is heard and when (detail) |
 | `music <track>` | tempo, beats, downbeats, energy |
 | `prekrij <p>` / `dih <p>` | cutaways over long talking / a moment without music |
@@ -61,8 +61,12 @@ Same quality, far fewer tokens:
    print only what changed.
 4. **Slow work in the background** (scan, render, inserts), output to a file.
    Do not sleep or poll; read `tail -5` of the log when it finishes.
-5. **Read images only when they decide something** — contact sheets and the
-   review's OKO images. Never read the same image twice.
+   **Shorten every long output** (`2>&1 | tail -5`) — one ffmpeg error without
+   it costs ~6,000 tokens.
+5. **Read images only when they decide something** — `_vlog/posnetki.jpg`
+   once at the start, contact sheets and the review's OKO images. Never read
+   the same image twice; after a fix, check only the changed spots (a few
+   render frames in one image).
 6. **Read each reference at its step** (below), not up front.
 7. **Do not repeat measurements `pregled` already makes** (checks, color,
    sound on the render, spectrum) — read its report.
@@ -78,7 +82,8 @@ in parallel.
    the character of the music, the highlight and complication of the day, and
    wishes. Ask for what is missing in one message. Always confirm the name.
 2. **Project folder, clips, `W scan` in the background** (~5 s per clip), then
-   `W povzetek <p> --zvoki`.
+   `W povzetek <p> --zvoki --slika` and read `_vlog/posnetki.jpg` **once**
+   (what is where: wide shots, places, the highlight).
 3. **3D insert or map right away**, in the background → read
    `references/inserts.md`. It can take over an hour; the edit does not wait.
 4. **Edit** by the sections below: story, picture, music, sound, captions.
@@ -166,8 +171,11 @@ closes (D8):
 
 - **Shooting order**, no jumps back. Two moments of one clip: one shot or a
   dissolve between them, never another clip in between.
-- **Fields from the catalog** (`hdr`, `src_w`, `src_h`); a shot never runs past
-  its clip (`in + dur ≤ duration`).
+- **Lay shots with `spec.polozi(s, p.catalog, [("001", in, dur), {"clip": "020",
+  "dur": 2.5, "motion": {...}}, …])`** — catalog fields, link and the shot's
+  sound are added for you, length is limited to the clip. Never build the JSON
+  by hand. Run `WP` snippets via `- <<'EOF'` (a script file elsewhere does
+  not find the module).
 - **Vertical material** (`2160x3840`) → vertical output `1080x1920`; title ~112,
   labels 52. Check `output` before rendering. Contact sheets with a fixed box
   lie about orientation — trust the catalog.
@@ -214,6 +222,9 @@ closes (D8):
   track under the arrival; the bed stays general.
 - **Section by energy** (`music.detail()`), aligned to a **downbeat** — track
   starts are intros.
+- **Level per track**: library tracks differ a lot in loudness (−7 to −17
+  LUFS). `gain_db = −24 − napovednik.glasnost_odseka(path, in, length)`, not one
+  gain for all.
 - **Tracks never overlap**: a change is a cut on a picture cut with a 0.7 s
   fade each side; the film fades in 1.2 s and rings out 2.5 s. Change where the
   day turns.

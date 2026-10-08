@@ -40,8 +40,11 @@ W vstavek pot "<work>/pot.json" -p "<project>" --na 12.5
   no black, no fade. `OPOZORILO … rob makete` means the insert is not good
   even if it rendered. Check first, last and widest frames. Never hide it with
   `scale` or cropping.
-- **On the picture track between shots** (`spec.vstavek_na_sliko`), not over
-  clips.
+- **On the picture track between shots**, not over clips. Place a rendered
+  route: `anim = studio.animacija_v_katalogu(p, P / "_vstavki" / "<route>.mp4")`,
+  `s["insert"].append({"file": "_vstavki/<route>.mp4", "start": <end of shot>,
+  "dur": anim["duration"]})`, then `spec.vstavek_na_sliko(s, len(s["insert"])
+  - 1, anim)` — everything after it moves on.
 - **Trains on real tracks**: a stage `{"vozilo": "vlak", "postaje": [...],
   "do": ...}` (also `[avto, vlak]`); stations from OSM `railway=station` — ask
   which train the user took. A vehicle that jitters is a tool bug, not a

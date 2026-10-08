@@ -11,8 +11,10 @@ whether a viewer stays). `W` is the `wayfare` command (SKILL.md, Setup).
    shots, automatic subtitles, music and trailer mistakes, long talking (B11,
    punch-ins), J-cuts (B12), film look (B15). Lay cutaways before this.
 2. **After the render** `W pregled <p> --popravi` (~30 s, all in parallel,
-   `preveri` included). Report: the output and `_izris/pregled/porocilo.json`,
-   images in `_izris/pregled/`. Exit 1 means something is NI.
+   `preveri` included), output to a file; read only its `popravljeno` lines.
+   Print the open items from `_izris/pregled/porocilo.json` (`zahteve`, status
+   `ne` or `oko`, first ~200 characters). Images are in `_izris/pregled/`.
+   Exit 1 means something is NI.
 
 | status | you do |
 |---|---|
@@ -27,8 +29,9 @@ whether a viewer stays). `W` is the `wayfare` command (SKILL.md, Setup).
    - **B3** a shot with no detected cut: are the neighbors too similar?
    - **B6** cut in a word: the command gives the nearest pause (`premor
      -0.11 s`). Move the cut by δ: outgoing shot and sound `dur` +δ, incoming
-     `start` and `in` +δ, `dur` −δ; music changing there moves with it. Under
-     0.05 s, leave it;
+     `start` and `in` +δ, `dur` −δ; music changing there moves with it (one
+     snippet for all cuts). Under 0.05 s, or where the neighbors' pauses
+     disagree, leave it;
    - **C4/C5** `napisi.jpg`: special characters, position, what is underneath;
    - **C8** `vstavek-N.png`: height of the smallest letters in pixels; a route
      also first, last and widest frame without black;
