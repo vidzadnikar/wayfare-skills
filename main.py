@@ -23,11 +23,8 @@ ARGUMENTS = {
 
 def find_video_url(result):
     video = result.get("video")
-    if isinstance(video, dict) and video.get("url"):
-        return video["url"]
-    videos = result.get("videos")
-    if isinstance(videos, list) and videos and isinstance(videos[0], dict):
-        return videos[0].get("url")
+    if isinstance(video, dict):
+        return video.get("url")
     return None
 
 
