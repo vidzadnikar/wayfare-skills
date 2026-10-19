@@ -1,6 +1,6 @@
 ---
 name: vlog
-description: Edit a travel vlog from raw clips in Wayfare Studio, up to a checked render at −14.5 LUFS with a publishing package — story of the day, music that fits, animated captions, place and time cards, a trailer of the best moments, cutaways over long talking, 3D route maps, and a full A–F review. Use when the user asks to make or edit a vlog, cut travel clips, edit a video from a folder of clips, drops video clips into the conversation, asks for a trailer or recap, or works on a Wayfare Studio project.
+description: Edit a travel vlog from raw clips in Wayfare Studio, up to a checked render at −14.5 LUFS with a publishing package — story of the day, music that fits, animated captions, place and time cards, a trailer of the best moments, cutaways over long talking, 3D route maps, a trend check and a critic step, and a full A–G review. Use when the user asks to make or edit a vlog, cut travel clips, edit a video from a folder of clips, drops video clips into the conversation, asks for a trailer or recap, or works on a Wayfare Studio project.
 license: MIT
 ---
 
@@ -38,7 +38,9 @@ Commands are Slovenian (the tool was built in Slovenia):
 | `music <track>` | tempo, beats, downbeats, energy |
 | `prekrij <p>` / `dih <p>` | cutaways over long talking / a moment without music |
 | `napovednik <p> --pregled` | trailer (see `references/trailer.md`) |
-| `pregled <p> [--pred] --popravi` | all requirements A–F, fixes, images to judge |
+| `pregled <p> [--pred] --popravi` | all requirements A–G, fixes, images to judge |
+| `trend [--primerjaj <p>]` | how travel vlogs are cut today (trend table) and the critic step — `references/trend.md` |
+| `glej <video\|clip> [--gemini --posnetek]` | cuts and pace of a video; with Gemini, what is in a clip |
 | `render <p>/edit.json` | render + loudness measurement |
 | `preveri <p>` / `barve <p>` | edit and render checks / color per shot |
 | `ocisti <clip> --primerjaj` | clean noise under speech and measure it |
@@ -86,23 +88,30 @@ in parallel.
    (what is where: wide shots, places, the highlight).
 3. **3D insert or map right away**, in the background → read
    `references/inserts.md`. It can take over an hour; the edit does not wait.
-4. **Edit** by the sections below: story, picture, music, sound, captions.
-5. **Cutaways, breath, day in numbers** — cutaways come before step 7, which
-   cuts remaining long talking with punch-ins (118 %) in pauses.
-6. **Trailer** → `references/trailer.md`. If the intro announces the day,
+4. **Trend**: `W trend` (medians and quartiles measured on reference vlogs,
+   lessons) → `references/trend.md`. Aim for the median, the quartiles are
+   the room; the user's own style (`moji`) wins when the two differ, unless
+   the user asked to be in step with the times.
+5. **Edit** by the sections below: story, picture, music, sound, captions.
+6. **Cutaways, breath** — cutaways come before step 8, which cuts remaining
+   long talking with punch-ins (118 %) in pauses.
+7. **Trailer** → `references/trailer.md`. If the intro announces the day,
    picture cards → `references/intro-cards.md`. A recap of several days →
    `references/recap.md`.
-7. **`W pregled <p> --pred --popravi`** before the first render: speech
+7b. **Critic**: `W trend --primerjaj <p>` — measures outside the trend's
+   quartiles. Fix what is a cut decision (shot lengths, a dead intro, too
+   many punch-ins); leave what is the day itself and say so in the report.
+8. **`W pregled <p> --pred --popravi`** before the first render: speech
    markers and level, noise cleaning, motion on still shots, J-cuts,
    punch-ins, film look; automatic subtitles out. Fix what stays **NI** (not
    met) with `references/review.md`.
-8. **Render** in the background.
-9. **`W pregled <p> --popravi`** on the render (~30 s, also makes the
+9. **Render** in the background.
+10. **`W pregled <p> --popravi`** on the render (~30 s, also makes the
    publishing package) → judge the **OKO** (eye) items with `review.md`. Fix
    everything at once, render, repeat — at most three rounds.
-10. **Report** as in `review.md`.
+11. **Report** as in `review.md`.
 
-Step 7 catches most problems before the slowest step, so one render and one
+Step 8 catches most problems before the slowest step, so one render and one
 corrective render are usually enough.
 
 ## Starting a project
@@ -295,7 +304,7 @@ closes (D8):
 
 ## Done only after the review
 
-The procedure, requirements A–F, what you decide alone and the report are in
+The procedure, requirements A–G, what you decide alone and the report are in
 `references/review.md` — read it at step 7. While any requirement is open, the
 vlog is not done. The review runs on its own: assess, decide, fix, render; do
 not ask about every finding. You recognize sound, measure loudness and see the

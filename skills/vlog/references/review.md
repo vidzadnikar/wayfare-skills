@@ -130,6 +130,15 @@ Never softened to end a round sooner. If one seems wrong, tell the user.
    render). Fix: `W objava`.
 4. Day in numbers before the end of the day (recap: one at the end).
 
+**G. Pace and trend** (`W trend --primerjaj <p>`; without a trend table G1–G3 and G5 do not apply)
+1. Shot length and cuts per minute inside the trend's quartiles for the chosen bucket.
+2. Intro as in the trend: first voice, title card and trailer no later or longer than the third quartile.
+3. On-screen text (share of time, titles per minute) inside the quartiles.
+4. No overdoing: at most 4 punch-ins and 2 whips or speed ramps per minute (editors' opinion, not a measurement).
+5. Length inside the trend's quartiles.
+
+None of these has a mechanical fix: pace is judgement. A deviation that is the day itself (a long dinner, a quiet walk) stays — say why.
+
 ## Deciding alone
 
 Do not ask about every finding — assess, decide, fix, render; at the end say
