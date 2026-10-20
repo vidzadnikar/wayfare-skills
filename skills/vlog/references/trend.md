@@ -1,7 +1,7 @@
 # Trend: cut the vlog the way good travel vlogs are cut today
 
 The Studio keeps a table of how current, successful travel vlogs are edited.
-It is measured, not guessed: reference channels are sampled every week, each
+It is measured, not guessed: three videos from the reference channels are sampled every day, each
 new video that did better than the channel's average is watched by Gemini
 (picture and sound, by its public YouTube link), and local meters measure the
 user's own exports. The table holds medians and quartiles per style bucket:
@@ -11,11 +11,17 @@ user's own exports. The table holds medians and quartiles per style bucket:
 | `hiter` | fast diary vlog: many cuts, talking to camera, text cards (the default) |
 | `filmski` | cinematic travel film: long shots, voice-over or no speech, music |
 | `pocasen` | slow or silent vlog: ambient sound, few cuts |
-| `vsi` | all reference videos, until one bucket has three |
+| `kratki` | YouTube Shorts (vertical, up to 3 min) |
+| `vsi` | all long reference videos, until one bucket has three |
 | `moji` | the user's own exported vlogs, measured locally |
 
 The Studio picks the bucket itself: the one whose median shot length is
-closest to the user's own exports.
+closest to the user's own exports; a vertical project up to 3 min is compared
+with `kratki`.
+
+**Skills** are lessons the user accepted (menu ⋯ → Trend, `W trend
+--vescine`). They come in the `<studio>` block; follow them in every edit
+where they fit the day. Other lessons are only ideas.
 
 Published rules of thumb (13–15 cuts per minute, median shot 4–5 s) come from
 documentary channels, not travel vlogs; this table replaces them.
