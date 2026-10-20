@@ -305,7 +305,7 @@ closes (D8):
 ## Done only after the review
 
 The procedure, requirements A–G, what you decide alone and the report are in
-`references/review.md` — read it at step 7. While any requirement is open, the
+`references/review.md` — read it at step 8. While any requirement is open, the
 vlog is not done. The review runs on its own: assess, decide, fix, render; do
 not ask about every finding. You recognize sound, measure loudness and see the
 spectrum — whether it **sounds good** stays the user's judgment.
