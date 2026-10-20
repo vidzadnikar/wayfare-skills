@@ -89,7 +89,9 @@ in parallel.
 3. **3D insert or map right away**, in the background → read
    `references/inserts.md`. It can take over an hour; the edit does not wait.
 4. **Trend**: `W trend` (medians and quartiles measured on reference vlogs,
-   lessons) → `references/trend.md`. Aim for the median, the quartiles are
+   learned techniques with recipes, lessons) → `references/trend.md`. Use the
+   learned techniques yourself where they fit the day and name them in the
+   report. Aim for the median, the quartiles are
    the room; the user's own style (`moji`) wins when the two differ, unless
    the user asked to be in step with the times.
 5. **Edit** by the sections below: story, picture, music, sound, captions.
