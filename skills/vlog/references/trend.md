@@ -1,7 +1,8 @@
 # Trend: cut the vlog the way good travel vlogs are cut today
 
 The Studio keeps a table of how current, successful travel vlogs are edited.
-It is measured, not guessed: three videos from the reference channels are sampled every day, each
+The Studio learns by itself: every 14 days it watches up to 24 successful videos from the reference
+channels and recognises their editing techniques. It is measured, not guessed: each
 new video that did better than the channel's average is watched by Gemini
 (picture and sound, by its public YouTube link), and local meters measure the
 user's own exports. The table holds medians and quartiles per style bucket:
@@ -19,9 +20,12 @@ The Studio picks the bucket itself: the one whose median shot length is
 closest to the user's own exports; a vertical project up to 3 min is compared
 with `kratki`.
 
-**Skills** are lessons the user accepted (menu ⋯ → Trend, `W trend
---vescine`). They come in the `<studio>` block; follow them in every edit
-where they fit the day. Other lessons are only ideas.
+**Learned techniques** (`<studio>` block, `W trend --tehnike`): what successful vlogs repeat now
+(in at least 30 % of videos from at least three channels) and the Studio can do. Each comes with
+"in Wayfare" instructions and a recipe from a video. Use them yourself in every vlog where they fit
+the day, without asking; the user does not approve them, only removes what they dislike (removed
+ones are not in the block). The user's own style still wins; say in the report which you used.
+Do not fake techniques the app cannot do yet: the Studio adds them itself (self-improvement).
 
 Published rules of thumb (13–15 cuts per minute, median shot 4–5 s) come from
 documentary channels, not travel vlogs; this table replaces them.
