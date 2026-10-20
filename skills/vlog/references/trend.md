@@ -11,7 +11,11 @@ user's own exports. The table holds medians and quartiles per style bucket:
 | `hiter` | fast diary vlog: many cuts, talking to camera, text cards (the default) |
 | `filmski` | cinematic travel film: long shots, voice-over or no speech, music |
 | `pocasen` | slow or silent vlog: ambient sound, few cuts |
+| `vsi` | all reference videos, until one bucket has three |
 | `moji` | the user's own exported vlogs, measured locally |
+
+The Studio picks the bucket itself: the one whose median shot length is
+closest to the user's own exports.
 
 Published rules of thumb (13–15 cuts per minute, median shot 4–5 s) come from
 documentary channels, not travel vlogs; this table replaces them.
@@ -21,8 +25,10 @@ documentary channels, not travel vlogs; this table replaces them.
 1. **Before you lay the story** (`W trend`): note
    the median shot length, cuts per minute by part (intro, middle, ending),
    when the first voice comes, when the hook lands, how long the trailer is,
-   how much on-screen text there is. Use the bucket the user works in
-   (`<studio>` block names it); the user's own exports (`moji`) say what they
+   how much on-screen text there is. These are cut decisions only: the
+   reference vlogs are 20–60 min long-form with talking to camera, so length
+   and the talking-head and music shares follow the user's own vlogs. The
+   `<studio>` block names the bucket; the user's own exports (`moji`) say what they
    did last time — when the two differ, the user's own style wins unless the
    user asked to be "in step with the times".
 2. **Critic step, before the first render** (`W trend --primerjaj <project>`): every measure outside the trend's
@@ -32,7 +38,8 @@ documentary channels, not travel vlogs; this table replaces them.
 3. **Review G1–G5** repeats the comparison as requirements: G1 tempo, G2
    intro, G3 on-screen text, G4 no overdoing (at most 4 punch-ins and 2
    whips or speed ramps per minute — editors' opinion, not a measurement),
-   G5 length. None has a mechanical fix; they are your judgement, explained.
+   G5 length against the user's own recent exports. None has a mechanical
+   fix; they are your judgement, explained.
 
 ## How to use the numbers
 
